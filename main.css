@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    height: 100vh;   
+    background-color: #F0FDF4
+}
+.nav{
+    display: flex;
+    width: 100%;
+    height: 7%;
+    background-color: rgba(178, 224, 193, 0.97);
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.search-container{
+    display: flex;
+    align-items: center;
+}
+.search{
+    font-weight: 200;
+    flex: 1;
+    border: 2px solid rgb(65, 181, 65);
+    width: 20rem;
+    height:2rem;
+    background-color:#F0FDF4;
+    padding: 2px;
+    border-right: none;
+}
+.search-icon{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height:2rem;
+    padding: 10px 15px;
+    outline: none;
+    background-color: #F0FDF4;
+    color:  rgb(65, 181, 65);
+    border-top:2px solid rgb(65, 181, 65);
+    border-bottom: 2px solid rgb(65, 181, 65);
+    border-right: 2px solid rgb(65, 181, 65);
+}
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:2rem;
+    width: 4rem;
+}
+#userlogo{
+ font-size: 2rem;
+ font-weight: 200;
+ color: rgb(15, 154, 15);
+}
+.userbutton{
+    border: none;
+     background-color: rgba(178, 224, 193, 0.97);
+     text-decoration: none;
+     cursor: pointer;
+}
