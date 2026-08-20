@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
-    <div class="main">
+<body style="background-color:rgba(212, 234, 222, 0.97);">
+    <div class="header">
         <div class="nav">
             <h1 style="color:green">Note<span style="color: orange;">Me</span></h1>
             <div class="search-container">
@@ -19,13 +19,71 @@
             </div>
             <div class="user">
                 <button class="userbutton">
-                     <i class="fa-regular fa-circle-user" id="userlogo"></i>
+                        <i class="fa-regular fa-circle-user" id="userlogo"></i>
                 </button>
             </div>
         </div>
-        <div class="mynotes">
-            
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <div class="side-option" onclick="tohome()">🏠 Home</div>
+            <div class="side-option">⭐ Important</div>
+            <div class="side-option">🗑️ Trash</div>
+            <h3>Categories</h3>
+            <div class="side-option">📚 Study</div>
+            <div class="side-option">💼 Work</div>
+            <div class="side-option">👤 Personal</div>
+        </div>
+        <div class="notes">
+            <div class="notes-header">
+                <h2>Your Notes</h2>
+                <button class="new-note">+ New Note</button>
+            </div>
+            <div class="notes-container">
+                <div class="note-card">
+                    <h3>DSA Preparation</h3>
+                    <p>Important topics and questions for DSA...</p>
+                    <span>19 Aug 2026</span>
+                    <div class="changes">
+                        <button class="edit"><i class="fa-solid fa-pen" style="color: rgb(109, 192, 105);"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(15, 212, 4);"></i></button>
+                        <button class="important" onclick="toggleImportant(this)"><i class="fa-regular fa-star important" style="color: rgb(15, 212, 4);"></i></button>
+                    </div>
+                </div>
+                <div class="note-card">
+                    <h3>Machine Learning</h3>
+                    <p>Notes about reinforcement learning...</p>
+                    <span>18 Aug 2026</span>
+                    <div class="changes">
+                        <button class="edit"><i class="fa-solid fa-pen" style="color: rgb(109, 192, 105);"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(15, 212, 4);"></i></button>
+                        <button class="important" onclick="toggleImportant(this)"><i class="fa-regular fa-star important" style="color: rgb(15, 212, 4);"></i></button>
+                    </div>
+                </div>
+                <div class="note-card">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS and JavaScript concepts...</p>
+                    <span>17 Aug 2026</span>
+                    <div class="changes">
+                        <button class="edit"><i class="fa-solid fa-pen" style="color: rgb(109, 192, 105);"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(15, 212, 4);"></i></button>
+                        <button class="important" onclick="toggleImportant(this)"><i class="fa-regular fa-star important" style="color: rgb(15, 212, 4);"></i></button>
+                    </div>
+                </div>
+                <div class="note-card">
+                    <h3>Travelling</h3>
+                    <p>Travelling essentials that are required...</p>
+                    <span>17 Aug 2026</span>
+                    <div class="changes">
+                        <button class="edit"><i class="fa-solid fa-pen" style="color: rgb(109, 192, 105);"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(15, 212, 4);"></i></button>
+                        <button class="important" onclick="toggleImportant(this)"><i class="fa-regular fa-star important" style="color: rgb(15, 212, 4);"></i></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
+<!-- <i class="fa-solid fa-star" style="color: rgb(109, 192, 105);"></i> -->
