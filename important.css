@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header{
+    height: 100%;   
+    background-color: #F0FDF4;
+    position: relative;
+}
+.nav{
+    display: flex;
+    width: 100%;
+    height: 7vh;
+    padding-top: 5% 5%;
+    background-color: rgba(178, 224, 193, 0.97);
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    /* border: 2px solid black; */
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    min-height: 60px;
+    max-width: 40%;
+}
+/* .search{
+    font-weight: 200;
+    flex: 1;
+    border: 2px solid rgb(65, 181, 65);
+    width: 20rem;
+    height:2rem;
+    background-color:#F0FDF4;
+    padding: 2px;
+    border-right: none;
+} */
+.search {
+    font-weight: 200;
+    flex: 1;
+    width: 20rem;
+    max-width: 20rem;
+    min-width: 0;
+    height: 2rem;
+    border: 2px solid rgb(65, 181, 65);
+    background-color: #F0FDF4;
+    padding: 2px;
+    border-right: none;
+}
+.search-icon{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height:2rem;
+    outline: none;
+    background-color: #F0FDF4;
+    color:  rgb(65, 181, 65);
+    border-top:2px solid rgb(65, 181, 65);
+    border-bottom: 2px solid rgb(65, 181, 65);
+    border-right: 2px solid rgb(65, 181, 65);
+}
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:2rem;
+    width: 4rem;
+    flex-shrink: 0;   /* prevents profile from disappearing */
+}
+#userlogo{
+ font-size: 2rem;
+ font-weight: 200;
+ color: rgb(15, 154, 15);
+}
+.userbutton{
+    border: none;
+     background-color: rgba(178, 224, 193, 0.97);
+     text-decoration: none;
+     cursor: pointer;
+}
+.profile-card {
+    position: absolute;
+    top: 4.5rem;
+    right: 1.5rem;
+    width: 15rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+.profile-icon {
+    font-size: 2.5rem;
+    color: rgb(15, 154, 15);
+    margin-bottom: 0.7rem;
+}
+.profile-card h3 {
+    color: #166534;
+    margin-bottom: 0.4rem;
+}
+.profile-card p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+.logout {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(109, 192, 105);
+    color: white;
+    cursor: pointer;
+}
+.logout:hover {
+    background-color: rgb(80, 170, 80);
+}
+.main {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+}
+.notes {
+    flex: 1;
+    min-width: 0;
+    padding: 2rem;
+    flex-shrink: 0;
+    margin-top: 2rem;
+}
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+.notes-header h2 {
+    color: #166534;
+    font-family: Brush Script MT;
+    font-size: 4rem;
+}
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.note-card {
+    background-color: white;
+    padding: 1.2rem;
+    min-height: 10rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 0.15rem 0.5rem rgba(0,0,0,0.08);
+}
+.note-card h3 {
+    color: #166534;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+.note-card p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+.note-card span {
+    display: block;
+    margin-top: 1.2rem;
+    font-size: 0.75rem;
+    color: #888;
+}
+.changes{
+    width: 100%;
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.edit{
+    font-size: small;
+    padding: 0.2rem;
+    width: auto;
+    height: auto;
+    background-color: white;
+    border: none;
+}
+.delete{
+    padding: 0.2rem;
+    width: auto;
+    height: auto;
+    background-color: white;
+    border: none;
+    margin-left: 15px;
+}
+.important{
+    border: none;
+    text-decoration: none;
+    background-color: white;
+    margin-left: 15px;
+}
+button{
+    cursor: pointer;
+}

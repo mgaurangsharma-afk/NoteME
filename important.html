@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="important.css">
+</head>
+<body style="background-color:rgba(212, 234, 222, 0.97);">
+     <div class="header">
+        <div class="nav">
+            <h1 style="color:green">Note<span style="color: orange;">Me</span></h1>
+            <div class="search-container">
+                <input type="text" placeholder="Search Notes" class="search">
+                <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="user">
+                <button class="userbutton" onclick="profile()">
+                        <i class="fa-regular fa-circle-user" id="userlogo"></i>
+                </button>
+            </div>
+        </div>
+        <div class="profile-card" id="profileCard">
+            <div class="profile-icon">
+                <i class="fa-regular fa-circle-user"></i>
+            </div>
+            <h3>Name:<span>Gaurang Sharma</span></h3>
+            <p>Email:<span>gaurang@gmail.com</span></p>
+            <button class="logout">Logout</button>
+        </div>
+    </div>
+    <!-- <div class="main">
+        <div class="notes">
+            <div class="notes-header">
+                <h2>Important Notes</h2>
+            </div>
+            <div class="notes-container">
+                <div class="note-card">
+                    <h3>DSA Preparation</h3>
+                    <p>Important topics and questions for DSA...</p>
+                    <span>19 Aug 2026</span>
+                    <div class="changes">
+                        <button class="edit"><i class="fa-solid fa-pen" style="color: rgb(109, 192, 105);"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(15, 212, 4);"></i></button>
+                    </div>
+                </div>
+                <div class="note-card">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS and JavaScript concepts...</p>
+                    <span>17 Aug 2026</span>
+                    <div class="changes">
+                        <button class="edit"><i class="fa-solid fa-pen" style="color: rgb(109, 192, 105);"></i></button>
+                        <button class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(15, 212, 4);"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="main">
+         <div class="notes">
+            <div class="notes-header">
+            <h2>Important Notes</h2>
+        </div>
+
+        <div class="notes-container" id="importantNotesContainer">
+            <!-- Important notes will be added here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="important.js"></script>
+</body>
+</html>
