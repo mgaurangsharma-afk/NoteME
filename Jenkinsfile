@@ -9,7 +9,7 @@ pipeline {
                 bat '''
                     echo Checking NoteME project...
                     if not exist Jenkinsfile exit /b 1
-                    echo NoteME project checked out successfully.
+                    echo 'NoteME project checked out successfully - CI test.'
                 '''
             }
         }
