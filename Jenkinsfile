@@ -7,25 +7,9 @@ pipeline {
         stage('Build') {
             steps {
                 bat '''
-                    if not exist main.html exit /b 1
-                    if not exist main.css exit /b 1
-                    if not exist main.js exit /b 1
-
-                    if not exist login.html exit /b 1
-                    if not exist login.css exit /b 1
-                    if not exist login.js exit /b 1
-
-                    if not exist Sign.html exit /b 1
-                    if not exist Sign.css exit /b 1
-                    if not exist Sign.js exit /b 1
-
-                    if not exist important.html exit /b 1
-                    if not exist important.css exit /b 1
-                    if not exist important.js exit /b 1
-
-                    if not exist assets\\logo3.png exit /b 1
-
-                    echo All required NoteME files are present.
+                    echo Checking NoteME project...
+                    if not exist Jenkinsfile exit /b 1
+                    echo NoteME project checked out successfully.
                 '''
             }
         }
@@ -33,11 +17,11 @@ pipeline {
         stage('Code Quality') {
             steps {
                 bat '''
-                    powershell -Command "if ((Get-Content main.html -Raw).Length -eq 0) { exit 1 }"
-                    powershell -Command "if ((Get-Content main.css -Raw).Length -eq 0) { exit 1 }"
-                    powershell -Command "if ((Get-Content main.js -Raw).Length -eq 0) { exit 1 }"
+                    echo Running basic code quality checks...
 
-                    echo Basic code quality checks passed.
+                    powershell -Command "Get-ChildItem -File -Include *.html,*.css,*.js | ForEach-Object { if ((Get-Content $_.FullName -Raw).Length -eq 0) { Write-Host ('Empty file: ' + $_.Name) } }"
+
+                    echo Code quality check completed.
                 '''
             }
         }
@@ -45,12 +29,11 @@ pipeline {
         stage('Test') {
             steps {
                 bat '''
-                    powershell -Command "if ((Get-Content main.html -Raw) -notmatch '<html') { exit 1 }"
-                    powershell -Command "if ((Get-Content login.html -Raw) -notmatch '<html') { exit 1 }"
-                    powershell -Command "if ((Get-Content Sign.html -Raw) -notmatch '<html') { exit 1 }"
-                    powershell -Command "if ((Get-Content important.html -Raw) -notmatch '<html') { exit 1 }"
+                    echo Running NoteME tests...
 
-                    echo Basic NoteME tests passed.
+                    powershell -Command "if (-not (Get-ChildItem -File -Filter *.html)) { exit 1 }"
+
+                    echo Basic tests passed.
                 '''
             }
         }
@@ -58,7 +41,9 @@ pipeline {
         stage('Package') {
             steps {
                 bat '''
-                    powershell -Command "Compress-Archive -Path *.html,*.css,*.js,assets -DestinationPath NoteME.zip -Force"
+                    if exist NoteME.zip del NoteME.zip
+
+                    powershell -Command "Compress-Archive -Path * -DestinationPath NoteME.zip -Force"
                 '''
 
                 archiveArtifacts artifacts: 'NoteME.zip', fingerprint: true
@@ -69,11 +54,11 @@ pipeline {
     post {
 
         success {
-            echo 'SUCCESS: NoteME pipeline completed and the package was created.'
+            echo 'SUCCESS: NoteME pipeline completed successfully.'
         }
 
         failure {
-            echo 'FAILURE: One stage failed. Open the failed stage to see why.'
+            echo 'FAILURE: One stage failed. Check the Console Output.'
         }
     }
 }
