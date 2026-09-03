@@ -21,6 +21,10 @@ class TestNoteME(unittest.TestCase):
         self.assertIn("Note", main_page)
         self.assertIn("Me", main_page)
 
+    def test_main_css_exists(self):
+        self.assertTrue((self.project_root / "main.css").exists())
+
+
 
 if __name__ == "__main__":
     unittest.main()
